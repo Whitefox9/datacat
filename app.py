@@ -1,5 +1,4 @@
 # datacat_app.py
-from flask import Flask, request, jsonify
 import pandas as pd
 import openai
 
@@ -42,3 +41,4 @@ def datacat_chat():
     )
 
     return jsonify({"reply": completion.choices[0].message.content})
+
