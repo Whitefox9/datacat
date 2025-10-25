@@ -2,20 +2,6 @@
 import pandas as pd
 import openai
 
-from flask import Flask
-app = Flask(__name__)
-
-@app.route('/')
-def home():
-    return "🐱 Hola, soy DataCat, tu gato analista de datos."
-
-if __name__ == '__main__':
-    app.run(debug=True)
-
-
-app = Flask(__name__)
-openai.api_key = "TU_API_KEY"
-
 # Cargar dataset de ejemplo
 df = pd.read_csv("energia.csv")
 
@@ -41,4 +27,5 @@ def datacat_chat():
     )
 
     return jsonify({"reply": completion.choices[0].message.content})
+
 
