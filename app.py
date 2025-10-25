@@ -1,6 +1,5 @@
 # datacat_app.py
 import pandas as pd
-import openai
 
 # Cargar dataset de ejemplo
 df = pd.read_csv("energia.csv")
@@ -27,5 +26,6 @@ def datacat_chat():
     )
 
     return jsonify({"reply": completion.choices[0].message.content})
+
 
 
